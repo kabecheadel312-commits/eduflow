@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — EduFlow</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<div class="auth-page">
+  <div class="auth-bg"></div>
+  <div class="auth-grid"></div>
+  <div class="auth-orbs">
+    <div class="auth-orb auth-orb-1"></div>
+    <div class="auth-orb auth-orb-2"></div>
+  </div>
+
+  <!-- Left Panel -->
+  <div class="auth-left">
+    <a href="index.html" class="auth-brand">
+      <div class="auth-brand-logo">🎓</div>
+      <span class="auth-brand-name">EduFlow</span>
+    </a>
+    <div class="auth-hero-content">
+      <div class="auth-hero-icon">🏫</div>
+      <h1 class="auth-hero-title">Your institution,<br>fully in control</h1>
+      <p class="auth-hero-subtitle">Sign in to manage students, courses, grades, and attendance from one powerful dashboard.</p>
+      <div class="auth-feature-points">
+        <div class="auth-feature-point">
+          <span class="auth-feature-check">✓</span>
+          Real-time analytics and KPI tracking
+        </div>
+        <div class="auth-feature-point">
+          <span class="auth-feature-check">✓</span>
+          Full student and faculty management
+        </div>
+        <div class="auth-feature-point">
+          <span class="auth-feature-check">✓</span>
+          Attendance, grades, and reports — all connected
+        </div>
+        <div class="auth-feature-point">
+          <span class="auth-feature-check">✓</span>
+          Role-based access for every team member
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Panel - Form -->
+  <div class="auth-right">
+    <div class="auth-form-container">
+      <div class="auth-form-header">
+        <h2 class="auth-form-title">Welcome back</h2>
+        <p class="auth-form-subtitle">Sign in to your EduFlow account</p>
+      </div>
+
+      <div class="auth-demo-info">
+        🔑 Demo credentials: <strong>admin@eduflow.io</strong> / <strong>admin123</strong>
+      </div>
+
+      <form class="auth-form" id="loginForm" novalidate>
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label" for="email">Email address</label>
+          <div class="auth-input-wrapper">
+            <span class="auth-input-icon">✉</span>
+            <input
+              type="email"
+              id="email"
+              class="auth-input"
+              placeholder="you@university.edu"
+              autocomplete="email"
+            />
+          </div>
+          <span class="auth-error-msg" id="emailError">Please enter a valid email address.</span>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <div class="auth-input-wrapper">
+            <span class="auth-input-icon">🔒</span>
+            <input
+              type="password"
+              id="password"
+              class="auth-input"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+            />
+            <button type="button" class="auth-toggle-password" id="togglePassword" aria-label="Toggle password visibility">👁</button>
+          </div>
+          <span class="auth-error-msg" id="passwordError">Password must be at least 6 characters.</span>
+        </div>
+
+        <!-- Options -->
+        <div class="auth-options">
+          <label class="auth-remember">
+            <input type="checkbox" id="rememberMe" />
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="auth-forgot" onclick="handleForgotPassword(event)">Forgot password?</a>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="auth-submit" id="loginBtn">
+          <span class="btn-text">Sign in →</span>
+          <div class="spinner btn-spinner"></div>
+        </button>
+      </form>
+
+      <div style="margin-top:var(--space-6);text-align:center;">
+        <p class="auth-footer-link">Don't have an account? <a href="#" onclick="showToastDemo(event)">Request access</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

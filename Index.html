@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduFlow — University Management Platform</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/landing.css" />
+</head>
+<body>
+
+<!-- Loading Overlay -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-logo">EduFlow</div>
+  <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">🎓</div>
+        <span class="logo-text">EduFlow</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="login.html" class="nav-login">Sign in</a>
+        <a href="login.html" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="#features" class="nav-mobile-link">Features</a>
+  <a href="#services" class="nav-mobile-link">Services</a>
+  <a href="#pricing" class="nav-mobile-link">Pricing</a>
+  <a href="#faq" class="nav-mobile-link">FAQ</a>
+  <a href="#contact" class="nav-mobile-link">Contact</a>
+  <a href="login.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">Get Started Free</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Now with AI-powered insights
+        </div>
+        <h1 class="hero-title">
+          The smartest way to<br>
+          <span class="highlight">manage your university</span>
+        </h1>
+        <p class="hero-subtitle">
+          EduFlow unifies students, teachers, courses, grades, and attendance into one elegant platform — built for modern institutions that demand more.
+        </p>
+        <div class="hero-actions">
+          <a href="login.html" class="btn btn-primary btn-lg">Start for free →</a>
+          <a href="#features" class="btn btn-secondary btn-lg">See how it works</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-number" data-count="12000">0</div>
+            <div class="hero-stat-label">Students managed</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number" data-count="340">0</div>
+            <div class="hero-stat-label">Universities trust us</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number" data-count="99">0</div>
+            <div class="hero-stat-label">% uptime SLA</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Preview -->
+      <div class="hero-visual">
+        <div class="dashboard-preview">
+          <div class="preview-topbar">
+            <div class="preview-dot"></div>
+            <div class="preview-dot"></div>
+            <div class="preview-dot"></div>
+            <div class="preview-url"></div>
+          </div>
+          <div class="preview-body">
+            <div class="preview-sidebar">
+              <div class="preview-sidebar-item active"></div>
+              <div class="preview-sidebar-item"></div>
+              <div class="preview-sidebar-item"></div>
+              <div class="preview-sidebar-item"></div>
+              <div class="preview-sidebar-item"></div>
+            </div>
+            <div class="preview-main">
+              <div class="preview-kpi-row">
+                <div class="preview-kpi"><div class="preview-kpi-line"></div><div class="preview-kpi-num"></div></div>
+                <div class="preview-kpi"><div class="preview-kpi-line"></div><div class="preview-kpi-num"></div></div>
+                <div class="preview-kpi"><div class="preview-kpi-line"></div><div class="preview-kpi-num"></div></div>
+              </div>
+              <div class="preview-chart">
+                <div class="preview-bar" style="height:40%"></div>
+                <div class="preview-bar" style="height:65%"></div>
+                <div class="preview-bar" style="height:50%"></div>
+                <div class="preview-bar" style="height:80%"></div>
+                <div class="preview-bar" style="height:60%"></div>
+                <div class="preview-bar" style="height:90%"></div>
+                <div class="preview-bar" style="height:70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="preview-floating preview-badge-1">
+          <div class="preview-badge-label">Attendance Rate</div>
+          <div class="preview-badge-value">94.2%</div>
+          <div class="preview-badge-change">↑ 2.1% this month</div>
+        </div>
+        <div class="preview-floating preview-badge-2">
+          <div class="preview-badge-label">New Students</div>
+          <div class="preview-badge-value">+128</div>
+          <div class="preview-badge-change">↑ This semester</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUSTED BY ===== -->
+<section class="trusted">
+  <div class="container">
+    <p class="trusted-label">Trusted by leading institutions worldwide</p>
+    <div class="trusted-logos">
+      <span class="trusted-logo">MIT</span>
+      <span class="trusted-logo">Stanford</span>
+      <span class="trusted-logo">Oxford</span>
+      <span class="trusted-logo">Harvard</span>
+      <span class="trusted-logo">Cambridge</span>
+      <span class="trusted-logo">Sorbonne</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Everything you need</p>
+      <h2 class="section-title">Built for every role<br>in your institution</h2>
+      <p class="section-subtitle">From administrators to teachers to students — EduFlow gives every stakeholder exactly what they need, nothing they don't.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">📊</div>
+        <h3 class="feature-title">Live Analytics Dashboard</h3>
+        <p class="feature-text">Real-time KPIs, enrollment trends, attendance heatmaps, and performance charts — all in one place, always up to date.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🎓</div>
+        <h3 class="feature-title">Student Management</h3>
+        <p class="feature-text">Complete student profiles, enrollment history, grade transcripts, and attendance records — searchable and filterable in seconds.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">👨‍🏫</div>
+        <h3 class="feature-title">Faculty Portal</h3>
+        <p class="feature-text">Assign courses, track workloads, manage schedules, and give teachers a streamlined grading and attendance workflow.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📅</div>
+        <h3 class="feature-title">Attendance Tracking</h3>
+        <p class="feature-text">Calendar-based attendance marking with visual summaries. Instantly spot patterns and flag students at risk of falling behind.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📝</div>
+        <h3 class="feature-title">Grades & Transcripts</h3>
+        <p class="feature-text">Enter, edit, and publish grades with pass/fail logic, GPA calculations, and semester-by-semester breakdowns.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📤</div>
+        <h3 class="feature-title">Reports & Exports</h3>
+        <p class="feature-text">Generate enrollment reports, grade summaries, and attendance audits. Export-ready layouts for accreditation and administration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-inner">
+      <div>
+        <p class="section-eyebrow">What we offer</p>
+        <h2 class="section-title">Every module your<br>institution needs</h2>
+        <div class="services-list">
+          <div class="service-item active">
+            <div class="service-icon">🏫</div>
+            <div class="service-info">
+              <h3>Course Management</h3>
+              <p>Create, assign, and track courses with credit hours, capacity, and teacher assignments all in one view.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🗓️</div>
+            <div class="service-info">
+              <h3>Smart Scheduling</h3>
+              <p>Conflict-free timetables generated automatically, with room allocation and clash detection built in.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🔔</div>
+            <div class="service-info">
+              <h3>Notifications & Alerts</h3>
+              <p>Automated alerts for low attendance, grade submissions, and upcoming deadlines across all roles.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🔐</div>
+            <div class="service-info">
+              <h3>Role-Based Access</h3>
+              <p>Granular permissions for admins, faculty, and students — everyone sees exactly what they should.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="services-visual reveal">
+        <div class="services-mockup">
+          <div class="mockup-header">
+            <span class="mockup-title">📋 Grade Report — Spring 2025</span>
+            <span class="badge badge-success">Published</span>
+          </div>
+          <div class="mockup-table">
+            <div class="mockup-row" style="background:var(--bg-600);font-weight:700;font-size:11px;color:var(--text-500);text-transform:uppercase;letter-spacing:1px;">
+              <span>Student</span><span>Score</span><span>Grade</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-name">Sarah Johnson</span>
+              <span style="font-size:13px;color:var(--text-300);">94/100</span>
+              <span class="mockup-grade a">A</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-name">Marcus Williams</span>
+              <span style="font-size:13px;color:var(--text-300);">81/100</span>
+              <span class="mockup-grade b">B</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-name">Lena Fischer</span>
+              <span style="font-size:13px;color:var(--text-300);">76/100</span>
+              <span class="mockup-grade b">B</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-name">Omar Khalil</span>
+              <span style="font-size:13px;color:var(--text-300);">63/100</span>
+              <span class="mockup-grade c">C</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATISTICS ===== -->
+<section class="statistics">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <div class="stat-icon">🎓</div>
+        <div class="stat-number" data-count="50000">0</div>
+        <div class="stat-label">Students across all institutions</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-icon">🏫</div>
+        <div class="stat-number" data-count="340">0</div>
+        <div class="stat-label">Universities using EduFlow</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-icon">📚</div>
+        <div class="stat-number" data-count="8200">0</div>
+        <div class="stat-label">Courses managed monthly</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-number" data-count="98">0</div>
+        <div class="stat-label">% customer satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <p class="section-eyebrow" style="justify-content:center;">What they say</p>
+      <h2 class="section-title">Trusted by administrators<br>and faculty worldwide</h2>
+    </div>
+    <div class="testimonials-slider">
+      <div class="testimonials-track" id="testimonialsTrack">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"EduFlow replaced three separate systems we were juggling. Now everything — grades, attendance, scheduling — lives in one place. Our admin workload dropped by 60%."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DR</div>
+            <div>
+              <div class="author-name">Dr. Rachel Thompson</div>
+              <div class="author-role">Dean of Academic Affairs, Westbrook University</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The dashboard gives me a real-time view of every student's progress. I can spot who needs support before they fall behind — that's genuinely changed outcomes."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MP</div>
+            <div>
+              <div class="author-name">Prof. Marcus Patel</div>
+              <div class="author-role">Head of Computer Science, TechCore Institute</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Setup took one afternoon. The interface is so clean that faculty needed zero training. EduFlow just works — exactly what a busy registrar needs."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AK</div>
+            <div>
+              <div class="author-name">Amira Khalil</div>
+              <div class="author-role">Registrar, Global Sciences University</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Attendance tracking used to take 20 minutes per class. Now it's done in seconds with the calendar view. The time savings across 40 faculty members is enormous."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JL</div>
+            <div>
+              <div class="author-name">James Liu</div>
+              <div class="author-role">IT Director, Northern Academic Center</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider-controls" id="sliderControls"></div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <p class="section-eyebrow" style="justify-content:center;">Simple pricing</p>
+      <h2 class="section-title">Plans that scale with<br>your institution</h2>
+      <p class="section-subtitle" style="margin:0 auto;">No hidden fees. No per-student charges on entry plans. Cancel anytime.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="pricing-plan">Starter</div>
+        <div class="pricing-price">
+          <span class="pricing-amount">$0</span>
+          <span class="pricing-period">/ month</span>
+        </div>
+        <p class="pricing-desc">For small departments getting started.</p>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> Up to 200 students</li>
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> 5 teacher accounts</li>
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> Basic grade tracking</li>
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> Attendance calendar</li>
+          <li class="pricing-feature"><span class="pricing-feature-icon no">✗</span> <span style="color:var(--text-600)">Advanced reports</span></li>
+          <li class="pricing-feature"><span class="pricing-feature-icon no">✗</span> <span style="color:var(--text-600)">Priority support</span></li>
+        </ul>
+        <a href="login.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Get started free</a>
+      </div>
+      <div class="pricing-card featured reveal">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-plan">Pro</div>
+        <div class="pricing-price">
+          <span class="pricing-amount">$49</span>
+          <span class="pricing-period">/ month</span>
+        </div>
+        <p class="pricing-desc">For growing universities and colleges.</p>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> Up to 5,000 students</li>
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> Unlimited teachers</li>
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> Advanced analytics</li>
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> Full reports & exports</li>
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> Custom branding</li>
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> Priority email support</li>
+        </ul>
+        <a href="login.html" class="btn btn-primary" style="width:100%;justify-content:center;">Start Pro trial</a>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="pricing-plan">Enterprise</div>
+        <div class="pricing-price">
+          <span class="pricing-amount">$199</span>
+          <span class="pricing-period">/ month</span>
+        </div>
+        <p class="pricing-desc">For large institutions with custom needs.</p>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> Unlimited students</li>
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> Unlimited teachers</li>
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> SSO & LDAP integration</li>
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> Dedicated account manager</li>
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> SLA guarantee (99.9%)</li>
+          <li class="pricing-feature"><span class="pricing-feature-icon">✓</span> 24/7 phone support</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary" style="width:100%;justify-content:center;">Contact sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <p class="section-eyebrow" style="justify-content:center;">Questions</p>
+      <h2 class="section-title">Frequently asked</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">How long does setup take?<span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Most institutions are fully set up within one business day. We provide an onboarding guide and data import templates for students, teachers, and courses. No developer needed.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can we import our existing student data?<span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. EduFlow supports CSV and Excel imports for students, teachers, courses, and historical grades. Our import wizard validates your data before committing any changes.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is student data secure and FERPA compliant?<span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Absolutely. All data is encrypted at rest and in transit (AES-256 / TLS 1.3). We are FERPA compliant, SOC 2 Type II certified, and never share data with third parties.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can different staff have different access levels?<span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. EduFlow has role-based access control (RBAC) with predefined roles for Admin, Registrar, Faculty, and Student. Each role sees only the features and data relevant to them.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do you offer a free trial for Pro or Enterprise?<span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes — Pro comes with a 30-day free trial, no credit card required. Enterprise plans include a guided pilot program. Contact our sales team to get started.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What support options are available?<span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Starter plans have access to our documentation and community forum. Pro includes priority email support with 24-hour response times. Enterprise customers get a dedicated account manager and 24/7 phone support.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div>
+        <p class="section-eyebrow">Get in touch</p>
+        <h2 class="section-title">Let's talk about<br>your institution</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <div class="contact-item-title">Email us</div>
+              <div class="contact-item-text">hello@eduflow.io</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-item-title">Call us</div>
+              <div class="contact-item-text">+1 (800) 388-2965</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <div class="contact-item-title">Business hours</div>
+              <div class="contact-item-text">Mon–Fri, 9am–6pm EST</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap reveal">
+        <div class="section-head-title" style="font-size:18px;font-weight:700;color:var(--text-100);margin-bottom:var(--space-5);">Send us a message</div>
+        <div class="contact-form-row">
+          <div class="form-group">
+            <label class="form-label">First name</label>
+            <input type="text" class="form-input" placeholder="John" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last name</label>
+            <input type="text" class="form-input" placeholder="Smith" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Work email</label>
+          <input type="email" class="form-input" placeholder="john@university.edu" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Institution name</label>
+          <input type="text" class="form-input" placeholder="Your university or college" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-input" rows="4" placeholder="Tell us about your institution and what you need..." style="resize:vertical;"></textarea>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="handleContactSubmit(this)">Send message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:0">
+          <div class="logo-icon" style="width:32px;height:32px;font-size:14px;">🎓</div>
+          <span class="logo-text" style="font-size:18px;">EduFlow</span>
+        </a>
+        <p>The university management platform built for institutions that refuse to settle for legacy software.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Product</div>
+        <ul class="footer-links">
+          <li><a href="#features" class="footer-link">Features</a></li>
+          <li><a href="#pricing" class="footer-link">Pricing</a></li>
+          <li><a href="#" class="footer-link">Changelog</a></li>
+          <li><a href="#" class="footer-link">Roadmap</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-link">About</a></li>
+          <li><a href="#" class="footer-link">Blog</a></li>
+          <li><a href="#" class="footer-link">Careers</a></li>
+          <li><a href="#contact" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-link">Privacy Policy</a></li>
+          <li><a href="#" class="footer-link">Terms of Service</a></li>
+          <li><a href="#" class="footer-link">FERPA Compliance</a></li>
+          <li><a href="#" class="footer-link">Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 EduFlow. All rights reserved.</span>
+      <div class="footer-socials">
+        <a href="#" class="footer-social">𝕏</a>
+        <a href="#" class="footer-social">in</a>
+        <a href="#" class="footer-social">gh</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

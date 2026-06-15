@@ -1,0 +1,125 @@
+/* ============================================
+   EduFlow - Responsive CSS
+   ============================================ */
+
+/* ---- Tablet: 1024px ---- */
+@media (max-width: 1024px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .grades-summary { grid-template-columns: repeat(2, 1fr); }
+  .bottom-grid { grid-template-columns: 1fr; }
+  .settings-grid { grid-template-columns: 1fr; }
+  .settings-nav { display: flex; flex-wrap: wrap; gap: var(--space-2); border-radius: var(--radius-xl); }
+  .settings-nav-item { flex: 1; min-width: 120px; justify-content: center; }
+  .teacher-grid { grid-template-columns: repeat(2, 1fr); }
+  .course-grid { grid-template-columns: repeat(2, 1fr); }
+  .reports-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---- Mobile: 768px ---- */
+@media (max-width: 768px) {
+  /* Sidebar becomes overlay */
+  .sidebar {
+    transform: translateX(-100%);
+    width: 260px !important;
+    z-index: var(--z-sidebar);
+  }
+  .sidebar.mobile-open { transform: translateX(0); }
+  .sidebar-overlay { display: block; }
+  .main-content { margin-left: 0 !important; }
+
+  /* Topnav */
+  .topnav-mobile-toggle { display: flex !important; }
+  .topnav-search { width: 180px; }
+  .topnav-user-name { display: none; }
+
+  /* Page content */
+  .page-content { padding: var(--space-4); }
+  .page-title { font-size: 20px; }
+
+  /* KPI */
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .kpi-number { font-size: 28px; }
+
+  /* Welcome banner */
+  .welcome-banner {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+    padding: var(--space-5);
+  }
+  .welcome-actions { justify-content: center; }
+
+  /* Charts */
+  .charts-grid { grid-template-columns: 1fr; }
+  .chart-canvas-wrapper { height: 180px; }
+
+  /* Tables */
+  .data-toolbar { flex-direction: column; align-items: stretch; }
+  .search-box { max-width: 100%; }
+  .toolbar-right { margin-left: 0; }
+
+  /* Grades summary */
+  .grades-summary { grid-template-columns: repeat(2, 1fr); }
+
+  /* Teachers / Courses */
+  .teacher-grid { grid-template-columns: 1fr; }
+  .course-grid { grid-template-columns: 1fr; }
+  .reports-grid { grid-template-columns: 1fr; }
+
+  /* Attendance */
+  .attendance-summary { grid-template-columns: 1fr; }
+  .calendar-day { font-size: 11px; }
+
+  /* Settings */
+  .settings-grid { grid-template-columns: 1fr; }
+
+  /* Modal */
+  .modal { border-radius: var(--radius-xl); }
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Analytics */
+  .analytics-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---- Small Mobile: 480px ---- */
+@media (max-width: 480px) {
+  .page-content { padding: var(--space-3); }
+
+  .kpi-grid { grid-template-columns: 1fr; }
+
+  .topnav-search { display: none; }
+  .topnav { padding: 0 var(--space-4); }
+
+  .grades-summary { grid-template-columns: repeat(2, 1fr); }
+
+  .modal-overlay { padding: var(--space-3); }
+  .modal-header, .modal-body, .modal-footer { padding: var(--space-4); }
+
+  .analytics-grid { grid-template-columns: 1fr; }
+
+  .data-table th,
+  .data-table td { padding: 12px var(--space-3); }
+
+  .welcome-banner { padding: var(--space-4); }
+  .welcome-text h2 { font-size: 18px; }
+
+  .bottom-grid { grid-template-columns: 1fr; }
+
+  .section-head { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+
+  /* Hide less critical table cols on small screens */
+  .hide-mobile { display: none !important; }
+
+  .teacher-actions { flex-direction: column; }
+
+  .calendar-grid { gap: 2px; }
+  .calendar-day { font-size: 10px; border-radius: var(--radius-sm); }
+}
+
+/* ---- Print ---- */
+@media print {
+  .sidebar, .topnav, .toast-container { display: none !important; }
+  .main-content { margin-left: 0 !important; }
+  .page-content { padding: 0; }
+  body { background: white; color: black; }
+}

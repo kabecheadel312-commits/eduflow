@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — EduFlow</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/students.css" />
+  <link rel="stylesheet" href="css/grades.css" />
+  <link rel="stylesheet" href="css/charts.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- Loading Overlay -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-logo">EduFlow</div>
+  <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- Sidebar Overlay (mobile) -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeMobileSidebar()"></div>
+
+<div class="dashboard-layout">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-icon">🎓</div>
+        <span class="sidebar-logo-text">EduFlow</span>
+      </div>
+      <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()" title="Collapse sidebar">‹</button>
+    </div>
+
+    <div class="sidebar-user">
+      <div class="sidebar-avatar">AD</div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name">Admin User</div>
+        <div class="sidebar-user-role">Super Administrator</div>
+      </div>
+      <div class="sidebar-user-status"></div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-label">Main</div>
+        <div class="nav-item active" data-page="overview" data-tooltip="Overview" onclick="navigateTo('overview')">
+          <span class="nav-icon">📊</span>
+          <span class="nav-label">Overview</span>
+        </div>
+        <div class="nav-item" data-page="students" data-tooltip="Students" onclick="navigateTo('students')">
+          <span class="nav-icon">🎓</span>
+          <span class="nav-label">Students</span>
+          <span class="nav-badge">248</span>
+        </div>
+        <div class="nav-item" data-page="teachers" data-tooltip="Teachers" onclick="navigateTo('teachers')">
+          <span class="nav-icon">👨‍🏫</span>
+          <span class="nav-label">Teachers</span>
+        </div>
+        <div class="nav-item" data-page="courses" data-tooltip="Courses" onclick="navigateTo('courses')">
+          <span class="nav-icon">📚</span>
+          <span class="nav-label">Courses</span>
+        </div>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Academic</div>
+        <div class="nav-item" data-page="grades" data-tooltip="Grades" onclick="navigateTo('grades')">
+          <span class="nav-icon">📝</span>
+          <span class="nav-label">Grades</span>
+        </div>
+        <div class="nav-item" data-page="attendance" data-tooltip="Attendance" onclick="navigateTo('attendance')">
+          <span class="nav-icon">📅</span>
+          <span class="nav-label">Attendance</span>
+        </div>
+        <div class="nav-item" data-page="schedule" data-tooltip="Schedule" onclick="navigateTo('schedule')">
+          <span class="nav-icon">🗓️</span>
+          <span class="nav-label">Schedule</span>
+        </div>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">System</div>
+        <div class="nav-item" data-page="reports" data-tooltip="Reports" onclick="navigateTo('reports')">
+          <span class="nav-icon">📤</span>
+          <span class="nav-label">Reports</span>
+        </div>
+        <div class="nav-item" data-page="settings" data-tooltip="Settings" onclick="navigateTo('settings')">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-label">Settings</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="nav-item" data-tooltip="Logout" onclick="handleLogout()">
+        <span class="nav-icon">🚪</span>
+        <span class="nav-label">Logout</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <div class="main-content" id="mainContent">
+
+    <!-- Top Navigation -->
+    <header class="topnav">
+      <div class="topnav-left">
+        <button class="topnav-mobile-toggle" onclick="openMobileSidebar()">☰</button>
+        <div class="topnav-breadcrumb">
+          <span>EduFlow</span>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current" id="breadcrumbCurrent">Overview</span>
+        </div>
+      </div>
+      <div class="topnav-search">
+        <span class="topnav-search-icon">🔍</span>
+        <input type="text" placeholder="Search students, courses..." id="globalSearch" />
+      </div>
+      <div class="topnav-right">
+        <button class="topnav-icon-btn" title="Notifications" onclick="showToast('info','Notifications','You have 3 unread alerts.')">
+          🔔
+          <span class="topnav-notif-dot"></span>
+        </button>
+        <button class="topnav-icon-btn" title="Messages" onclick="showToast('info','Messages','No new messages.')">✉️</button>
+        <div class="topnav-user" onclick="navigateTo('settings')">
+          <div class="topnav-user-avatar">AD</div>
+          <span class="topnav-user-name">Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <main class="page-content" id="pageContent">
+      <!-- Pages are injected here by JS -->
+    </main>
+  </div>
+</div>
+
+<!-- ===== MODALS ===== -->
+
+<!-- Add/Edit Student Modal -->
+<div class="modal-overlay" id="studentModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" id="studentModalTitle">Add Student</div>
+        <div class="modal-subtitle">Fill in the student's details below</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('studentModal')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input type="text" class="form-input" id="studentFirstName" placeholder="John" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input type="text" class="form-input" id="studentLastName" placeholder="Smith" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" id="studentEmail" placeholder="john@university.edu" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Student ID</label>
+          <input type="text" class="form-input" id="studentId" placeholder="STU-0001" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Department</label>
+          <select class="form-input" id="studentDept">
+            <option value="">Select department</option>
+            <option>Computer Science</option>
+            <option>Mathematics</option>
+            <option>Physics</option>
+            <option>Business</option>
+            <option>Literature</option>
+            <option>Engineering</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Year</label>
+          <select class="form-input" id="studentYear">
+            <option>Year 1</option>
+            <option>Year 2</option>
+            <option>Year 3</option>
+            <option>Year 4</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Status</label>
+        <select class="form-input" id="studentStatus">
+          <option value="Active">Active</option>
+          <option value="Inactive">Inactive</option>
+          <option value="On Leave">On Leave</option>
+          <option value="Graduated">Graduated</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('studentModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveStudent()">Save Student</button>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Confirm Modal -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal" style="max-width:420px;">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title">Confirm Delete</div>
+        <div class="modal-subtitle">This action cannot be undone</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('deleteModal')">×</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:14px;color:var(--text-300);line-height:1.6;" id="deleteModalText">Are you sure you want to delete this record?</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('deleteModal')">Cancel</button>
+      <button class="btn btn-danger" id="deleteConfirmBtn">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Grade Modal -->
+<div class="modal-overlay" id="gradeModal">
+  <div class="modal" style="max-width:460px;">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title">Edit Grade</div>
+        <div class="modal-subtitle" id="gradeModalSubtitle">Update student score</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('gradeModal')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="grade-modal-score">
+        <div class="grade-modal-preview" id="gradePreview" style="background:var(--success-bg);color:var(--success);">A</div>
+        <div style="flex:1;">
+          <div class="form-group">
+            <label class="form-label">Score (0–100)</label>
+            <input type="number" class="form-input" id="gradeScoreInput" min="0" max="100" placeholder="85" oninput="updateGradePreview(this.value)" />
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Semester</label>
+        <select class="form-input" id="gradeSemester">
+          <option>Spring 2025</option>
+          <option>Fall 2024</option>
+          <option>Spring 2024</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Notes (optional)</label>
+        <input type="text" class="form-input" id="gradeNotes" placeholder="e.g. Extra credit applied" />
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('gradeModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveGrade()">Save Grade</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/students.js"></script>
+<script src="js/grades.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

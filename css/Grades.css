@@ -1,0 +1,183 @@
+/* ============================================
+   EduFlow - Grades CSS
+   ============================================ */
+
+.grades-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.grade-summary-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.grade-summary-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+.grade-summary-letter {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.grade-a .grade-summary-letter { color: var(--success); }
+.grade-b .grade-summary-letter { color: var(--info); }
+.grade-c .grade-summary-letter { color: var(--warning); }
+.grade-f .grade-summary-letter { color: var(--danger); }
+
+.grade-summary-count {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-100);
+  margin-bottom: 2px;
+}
+
+.grade-summary-label {
+  font-size: 12px;
+  color: var(--text-500);
+}
+
+/* Grade Badge in table */
+.grade-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.grade-badge.A { background: var(--success-bg); color: var(--success); }
+.grade-badge.B { background: var(--info-bg); color: var(--info); }
+.grade-badge.C { background: var(--warning-bg); color: var(--warning); }
+.grade-badge.D { background: rgba(249,115,22,0.1); color: #f97316; }
+.grade-badge.F { background: var(--danger-bg); color: var(--danger); }
+
+/* Pass/Fail indicator */
+.pass-fail {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 50px;
+}
+
+.pass-fail.pass { background: var(--success-bg); color: var(--success); }
+.pass-fail.fail { background: var(--danger-bg); color: var(--danger); }
+
+.pass-fail::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Score bar */
+.score-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.score-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-500);
+  border-radius: 3px;
+  overflow: hidden;
+  min-width: 80px;
+}
+
+.score-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.8s ease;
+}
+
+.score-bar-fill.high { background: linear-gradient(90deg, #059669, var(--success)); }
+.score-bar-fill.mid  { background: linear-gradient(90deg, #d97706, var(--warning)); }
+.score-bar-fill.low  { background: linear-gradient(90deg, #dc2626, var(--danger)); }
+
+.score-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-100);
+  min-width: 36px;
+  text-align: right;
+}
+
+/* Edit grade modal specifics */
+.grade-modal-score {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.grade-modal-preview {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 900;
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+}
+
+/* GPA display */
+.gpa-display {
+  text-align: center;
+  padding: var(--space-8);
+  background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(37,99,235,0.05));
+  border: 1px solid rgba(124,58,237,0.2);
+  border-radius: var(--radius-xl);
+}
+
+.gpa-number {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--primary-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gpa-label {
+  font-size: 14px;
+  color: var(--text-400);
+  margin-top: var(--space-2);
+}
+
+/* Transcript table extras */
+.cell-score {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-100);
+}
+
+.cell-semester {
+  font-size: 12px;
+  color: var(--text-500);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 2px 8px;
+  border-radius: 50px;
+}
